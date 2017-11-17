@@ -1,0 +1,44 @@
+p {
+    font: 18px/30px Arial, sans-serif; color: brown;
+
+    text-align: left;
+
+}
+li{
+    font: 18px Arial; color: blueviolet;
+}
+
+
+h1{
+    font-size: 48px;
+    font-style: oblique;
+    font-family:'Allan';
+    text-align: center;
+}
+p, span{
+    text-align: center;
+
+}
+
+.container{
+    background-color: lightgreen !important;
+}
+
+label{
+    font-size: large;;
+    font-style: italic;
+
+}
+.navbar{
+    color: lightyellow;
+}
+
+
+body
+{
+    background: black;
+    margin-top:0px;
+    margin-left:0px;
+    margin-right:0px;
+
+}

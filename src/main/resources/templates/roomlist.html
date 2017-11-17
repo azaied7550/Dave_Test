@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <title>Room Listing</title>
+</head>
+<body>
+
+<br />
+<div class="container">
+    <div th:fragment="navbar" class="navbar  navbar-light bg-faded">
+        <div class="navbar-brand">
+
+            <a class="navbar brand" href="/add">Add a New Room</a>
+            <div class="nav-collapse collapse">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <table>
+        <tr>
+            <th>Room Address </th>
+            <th>City   |</th>
+            <th>State  |</th>
+            <th>Price  |</th>
+            <th>Rental Status  |</th>
+
+        </tr>
+
+        <tr th:each="room : ${rooms}">
+            <td th:text="${room.address}"></td>
+            <td th:text="${room.city}"></td>
+            <td th:text="${room.state}"></td>
+            <td th:text="${room.price}"></td>
+            <td th:text="${room.rentalStatus}"></td>
+            <td>
+                <a th:href="@{/update/{id} (id=${room.id})}"> Update  | </a>
+                <a th:href="@{/detail/{id} (id=${room.id})}">  Details|</a>
+            </td>
+        </tr>
+    </table>
+    <div class="vl"></div>
+</div>
+
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+</body>
+</html>

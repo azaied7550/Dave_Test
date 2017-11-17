@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script
+            src="http://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <title>Room Display</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div th:fragment="navbar" class="navbar  navbar-light bg-faded">
+        <div class="navbar-brand">
+
+            <a class="navbar brand" href="/">Display all Rooms</a>
+            <div class="nav-collapse collapse">
+
+                <br />
+                <div class="col-md-3"><a href="/add">Add a New Room</a></div>
+
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <a href="/add">Add a New Room</a>
+    <hr />
+    <div class="col-md-12">
+    <label class="col-md-3">Room Address:</label> <p class="col-md-2"></p> <span th:text="${room.address}"></span> <br />
+    </div>
+
+    <div class="col-md-12">
+    <label class="col-md-3">City:</label> <p class="col-md-2"></p><span th:text="${room.city}"></span> <br />
+    </div>
+    <div class="col-md-12">
+    <label class="col-md-3">State:</label> <p class="col-md-2"></p><span th:text="${room.state}"></span> <br />
+    </div>
+    <div class="col-md-12">
+    <label class="col-md-3">Room Price:</label><p class="col-md-2"></p><span th:number="${room.price}"></span><br />
+    </div>
+
+    <div class="col-md-12">
+
+    <label class="col-md-3">Room Rental Status:</label> <p class="col-md-2"></p><span th:text="${room.rentalStatus}"></span> <br />
+    <br />
+    </div>
+    <hr />
+
+
+    <a th:href="@{/update/{id} (id=${room.id})}"> Update this Room  </a>
+
+    <br />
+    <hr />
+    <div class="vl"></div>
+</div>
+
+<script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+</body>
+</html>

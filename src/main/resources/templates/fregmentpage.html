@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:fragment="headstuff">
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="navclass" class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#afua-navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">Sample Application</div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="afua-navbar">
+
+            <ul class="nav navbar-nav">
+                <li th:classappend="${pagenumber}=='4'?active:''"><a href="/register">Registration</a></li>
+                <li th:classappend="${pagenumber}=='1'?active:''"><a href="/pageone">Page One</a></li>
+                <li th:classappend="${pagenumber}=='2'?active:''"><a href="/pagetwo">Page Two</a></li>
+                <li th:classappend="${pagenumber}=='3'?active:''"><a href="/pagethree">Page Three</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="col-md-4"th:fragment="everydiv">
+    <h1>This is a fragment that is supposed to show on every page</h1>
+    <h2 th:inline="text">The title of this page is [[${title}]]</h2>
+    <div th:classappend="${pagenumber}==1?text-success:text-danger" th:inline="text">This text is green for page 1, red for other pages</div>
+</div>
+
+<div th:fragment="footer">This is a Footer</div>
+</body>
+</html>
